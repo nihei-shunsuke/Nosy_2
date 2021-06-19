@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\PlanController;
+
+Route::get('/plans/create', 'PlanController@create');
+Route::post('/plans/', 'PlanController@store');
+
+// Route::post('/plans', 'PlanController@store');
+// Route::put('/plans/{plan}', 'PlanController@update');
