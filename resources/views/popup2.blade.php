@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosy</title>
     <style>
-        @charset "UTF-8";
+@charset "UTF-8";
+
+/* popup.css開始 */
 
 #box {
   background: #FFF;
@@ -56,6 +58,9 @@
 #btn:active {
   background-color: #4A4;
 }
+/* popup.css終了 */
+
+/* style.css開始 */
 
 html,
 body {
@@ -157,6 +162,17 @@ td.today {
 #next {
   float: right;
 }
+
+.date {
+  display: flex;
+  flex-direction: row;
+}
+
+.DateContainer {
+  display: flex;
+  flex-direction: row;
+}
+/* style.css終了 */
 
     </style>
 <body>
@@ -295,8 +311,9 @@ function add() {
     <div id="calendar"></div>
     </div>
     <script>
-        //window.onload= function(){ //window の load イベントに対応するイベントハンドラ
-function initPopup() {
+// popup.js開始
+//window.onload= function(){ //window の load イベントに対応するイベントハンドラ
+    function initPopup() {
     let box = document.querySelector("#box"); //id要素取得
     let btn = document.querySelector("#btn"); //id要素取得
     let close = document.querySelector("#close") //id要素取得
@@ -316,8 +333,10 @@ function initPopup() {
     };
 
     }
+// popup.js終了
 
-    const week = ["日", "月", "火", "水", "木", "金", "土"];
+// index.js開始
+const week = ["日", "月", "火", "水", "木", "金", "土"];
 const today = new Date();
 
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -325,6 +344,7 @@ var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
 window.onload = function () {
     showProcess(today, calendar);
+    initPopup();
 };
 
 function prev(){
@@ -368,20 +388,20 @@ function createProcess(year, month) {
 
         for (var j = 0; j < week.length; j++) {
             if (i == 0 && j < startDayOfWeek) {
-                calendar += "<td class='disabled'>" + "<a href='/plans/create'>" + (lastMonthEndDate - startDayOfWeek + j + 1).toString(2) + "</a>" + "</td>";
+              calendar += "<td class='disabled'>" + "<a href='create.html'>" + (lastMonthEndDate - startDayOfWeek + j + 1).toString(2) + "</a>" + "</td>";
             } else if (count >= endDate) {
 
                 count++;
-                calendar += "<td class='disabled'>" + "<a href='/plans/create'>" + (count - endDate).toString(2) + "</a>" + "</td>";
+                calendar += "<td class='disabled'>" + "<a href='create.html'>" + (count - endDate).toString(2) + "</a>" + "</td>";
             } else {
 
                 count++;
                 if(year == today.getFullYear()
-                    && month == (today.getMonth())
-                    && count == today.getDate()){
-                    calendar += "<td class='today'>" + "<a href='/plans/create'>" + count.toString(2) + "</a>" + "</td>";
+                  && month == (today.getMonth())
+                  && count == today.getDate()){
+                    calendar += "<td class='today'>" + "<a href='create.html'>" + count.toString(2) + "</a>" + "</td>";
                 } else {
-                    calendar += "<td>" + "<a href='/plans/create'>" + count.toString(2) + "</a>" + "</td>";
+                    calendar += "<td>" + "<a href='create.html'>" + count.toString(2) + "</a>" + "</td>";
                 }
             }
         }
@@ -390,7 +410,7 @@ function createProcess(year, month) {
     return calendar;
 }
 
-
+// index.j終了
     </script>
 </body>
 </html>
