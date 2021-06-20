@@ -5,18 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nosy</title>
+  <script src="./node_modules/nicojs/lib/nico.js"></script>
   <style>
-
-.date {
-  display: flex;
-  flex-direction: row;
-}
-
-.DateContainer {
-  display: flex;
-  flex-direction: row;
-}
-    table {
+table {
     margin-left: 400px;
     margin-top: 100px;
     border: solid;
@@ -94,8 +85,12 @@ tr {
     </form>
 
 </table>
+<script src="{{ asset('./node_modules/nicojs/lib/nico.js') }}"></script>
 <script>
-    let nico = new nicoJS({
+
+// sample.js開始
+
+let nico = new nicoJS({
     app       : document.getElementById('app'),
     width     : 1500,
     height    : 700,
@@ -121,38 +116,14 @@ function execution() {
     nico.send("wwwwwwwwwwwwwwwwww");
     nico.send("充実してるふり乙wwww");
     nico.send(text + "の予定入ったwww");
+    nico.send(text, '#000000'); // 色変更
+    nico.send(starthour + "時" + startminute + "分からだってwwww");
+    nico.send(endhour + "時" + endminute + "分までとか草wwww");
+    nico.send(memo + "とかその情報いらねーだろwwww");
+    nico.send("wwwwwwwwwwwwwwwwww");
+    nico.send("充実してるふり乙wwww");
 }
-
-function add() {
-    var text = document.getElementById('comment').value;
-    var starthour = document.getElementById('starthour').value;
-    var startminute = document.getElementById('startminute').value;
-    var endhour = document.getElementById('endhour').value;
-    var endminute = document.getElementById('endminute').value;
-    var detail = document.getElementById('memo').value;
-    var addtodo = document.getElementById('addtodo');
-    const newElement = document.createElement('tr');
-    const newtitle = document.createElement('td');
-    const newstart = document.createElement('td');
-    const newend = document.createElement('td');
-    const newmemo = document.createElement('td');
-    newtitle.textContent = text;
-    newstart.textContent = starthour + ":" +startminute;
-    newend.textContent = endhour + ":" +endminute;
-    newmemo.textContent = detail;
-    starttime = starthour + ":" +startminute;
-    endtime = endhour + ":" +endminute;
-    newElement.appendChild(newtitle);
-    newElement.appendChild(newstart);
-    newElement.appendChild(newend);
-    newElement.appendChild(newmemo);
-    var table = document.createElement("table");
-    var tblBody = document.createElement("tbody");
-   table.appendChild(newElement);
-   tblBody.appendChild(table);
-   addtodo.appendChild(tblBody);
-
-}
+// sample.js終了
 </script>
 </body>
 </html>

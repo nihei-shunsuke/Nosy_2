@@ -139,7 +139,7 @@ td.today {
     <div id="calendar"></div>
     </div>
     <script>
-        const week = ["日", "月", "火", "水", "木", "金", "土"];
+const week = ["日", "月", "火", "水", "木", "金", "土"];
 const today = new Date();
 
 var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -147,6 +147,7 @@ var showDate = new Date(today.getFullYear(), today.getMonth(), 1);
 
 window.onload = function () {
     showProcess(today, calendar);
+    initPopup();
 };
 
 function prev(){
@@ -190,20 +191,20 @@ function createProcess(year, month) {
 
         for (var j = 0; j < week.length; j++) {
             if (i == 0 && j < startDayOfWeek) {
-                calendar += "<td class='disabled'>" + "<a href='/plans/create'>" + (lastMonthEndDate - startDayOfWeek + j + 1).toString(2) + "</a>" + "</td>";
+              calendar += "<td class='disabled'>" + "<a href='create.html'>" + (lastMonthEndDate - startDayOfWeek + j + 1).toString(2) + "</a>" + "</td>";
             } else if (count >= endDate) {
 
                 count++;
-                calendar += "<td class='disabled'>" + "<a href='/plans/create'>" + (count - endDate).toString(2) + "</a>" + "</td>";
+                calendar += "<td class='disabled'>" + "<a href='create.html'>" + (count - endDate).toString(2) + "</a>" + "</td>";
             } else {
 
                 count++;
                 if(year == today.getFullYear()
-                    && month == (today.getMonth())
-                    && count == today.getDate()){
-                    calendar += "<td class='today'>" + "<a href='/plans/create'>" + count.toString(2) + "</a>" + "</td>";
+                  && month == (today.getMonth())
+                  && count == today.getDate()){
+                    calendar += "<td class='today'>" + "<a href='create.html'>" + count.toString(2) + "</a>" + "</td>";
                 } else {
-                    calendar += "<td>" + "<a href='/plans/create'>" + count.toString(2) + "</a>" + "</td>";
+                    calendar += "<td>" + "<a href='create.html'>" + count.toString(2) + "</a>" + "</td>";
                 }
             }
         }
