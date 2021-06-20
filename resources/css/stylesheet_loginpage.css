@@ -1,0 +1,18 @@
+#email {
+    border: solid;
+    margin-top: 50px;
+    border-color: #88d9f1;
+}
+
+.passwordForm {
+    margin-left: 35px;
+
+}
+#password {
+    margin-left: 23px ;
+    border: solid;
+    border-color: #88d9f1;
+}
+.Form {
+    text-align: center;
+}

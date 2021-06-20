@@ -1,0 +1,23 @@
+table {
+    margin-left: 400px;
+    margin-top: 100px;
+    border: solid;
+}
+td {
+    border: solid;
+    border: aqua;
+
+}
+tr {
+    border: solid;
+    border: aqua;
+    text-align: center;
+    margin: 100px;
+}
+.submit {
+    text-align: right;
+}
+.rotate {
+    text-align: center;
+    margin: 75px;
+}

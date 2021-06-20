@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+#box {
+  background: #FFF;
+  border: 1px solid #333;
+  box-shadow: 0 10px 10px #999;
+  display: none;  /*! id要素に対してdisplay:none  */
+  font-family: serif;
+  padding: 10px;
+  position: relative;
+  text-align: center;
+  width: 200px;
+}
+
+#box > #close {
+  background-color: #EEE;
+  color: #333;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  position: absolute;
+  right: 1px;
+  text-align: center;
+  top: 1px;
+  width: 30px;
+}
+
+#box > #close:hover {
+  background-color: #F9F9F9;
+  color: #999;
+}
+
+#btn {
+  background-color: rgb(20, 114, 236);
+  border: 0;
+  color: #FFF;
+  cursor: pointer;
+  padding: 5px 20px;
+}
+
+#btn:hover {
+  color: rgb(20, 114, 236);
+  border: 1px solid rgb(20, 114, 236);
+  background-color: rgb(255, 255, 255);
+}
+
+#btn:active {
+  background-color: #4A4;
+}
