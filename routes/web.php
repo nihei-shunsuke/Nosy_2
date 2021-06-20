@@ -13,8 +13,7 @@
 
 use App\Http\Controllers\PlanController;
 
+Route::get('/', 'PlanController@index');
 Route::get('/plans/create', 'PlanController@create');
-Route::post('/plans', 'PlanController@store');
-
-// Route::post('/plans', 'PlanController@store');
-// Route::put('/plans/{plan}', 'PlanController@update');
+Route::post('/plans/store', 'PlanController@store');
+Route::put('/plans/{plan}', 'PlanController@update');
